@@ -21,7 +21,7 @@ function AboutMe() {
                                                        target="_blank" rel="noreferrer">Github</a></li>
             </ul>
           </div>
-          <img src={Photo} alt="Фото" className="about-me__image"/>
+          <img src={Photo} alt="Виталий, фронтенд разработчик" className="about-me__image"/>
         </div>
       </article>
     </section>

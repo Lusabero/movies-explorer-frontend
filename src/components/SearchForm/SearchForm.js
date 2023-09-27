@@ -8,7 +8,10 @@ function SearchForm() {
   return (
     <section className="search-form">
       <form action="" className="search-form__form">
-        <input type="text" className="search-form__input search-form__input_search" placeholder="Фильм"/>
+        <div className="search-form__search">
+          <input type="text" className="search-form__input search-form__input_search" placeholder="Фильм" required/>
+          <button className="search-form__submit"></button>
+        </div>
         <div className="search-form__short-movies">
           <input type="checkbox"
                  id="search-form__checkbox"
@@ -20,7 +23,6 @@ function SearchForm() {
           <label htmlFor="search-form__checkbox" className="search-form__checkbox-label"></label>
           <p className="search-form__checkbox-description">Короткометражки</p>
         </div>
-        <button className="search-form__submit"></button>
       </form>
     </section>
   )

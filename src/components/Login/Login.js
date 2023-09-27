@@ -25,13 +25,13 @@ function Login() {
         <label className="sign-form__label">
           <p className="sign-form__input-title">E-mail</p>
           <input className="sign-form__input sign-form__input_input_email" id="sign-form__email" name="userEmail" type="text"
-                 required onChange={(e) => setEmail(e.target.value)} value={email || ''}/>
+                 required onChange={(e) => setEmail(e.target.value)} value={email || ''} placeholder={"Email"}/>
           <span id="sign-form__email-error" className="sign-form__error"></span>
         </label>
         <label className="sign-form__label">
           <p className="sign-form__input-title">Пароль</p>
           <input className="sign-form__input sign-form__input_input_password" id="sign-form__password" name="userPassword" type="password"
-                 required onChange={(e) => setPassword(e.target.value)} value={password || ''}/>
+                 required onChange={(e) => setPassword(e.target.value)} value={password || ''} placeholder={"Пароль"} minLength={8}/>
           <span id="sign-form__password-error" className="sign-form__error"></span>
         </label>
       </SignForm>

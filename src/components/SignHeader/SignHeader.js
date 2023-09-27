@@ -5,7 +5,7 @@ import "./SignHeader.css";
 
 function SignHeader(props) {
   return (
-    <div className="sign-header__header">
+    <div className="sign-header">
       <Link to='/' className="sign-header__logo-link"><img className="sign-header__logo" src={Logo} alt="Логотип"/></Link>
       <h1 className="sign-header__title">{props.title}</h1>
     </div>

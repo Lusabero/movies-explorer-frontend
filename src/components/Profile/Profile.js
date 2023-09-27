@@ -20,12 +20,12 @@ function Profile() {
       <form action="" className="profile__form" onSubmit={handleSubmit}>
         <label className="profile__input-label">
           <p className="profile__input-title">Имя</p>
-          <input type="text" className="profile__input" name="name" value={name || 'Виталий'} required onChange={(e) => setName(e.target.value)}/>
+          <input type="text" className="profile__input" name="name" value={name || 'Виталий'} required onChange={(e) => setName(e.target.value)} placeholder={"Имя"} minLength={2}/>
         </label>
         <div className="profile__input-separator"></div>
         <label className="profile__input-label">
           <p className="profile__input-title">E-mail</p>
-          <input type="email" className="profile__input" name="email" value={email || 'pochta@yandex.ru'} required onChange={(e) => setEmail(e.target.value)}/>
+          <input type="email" className="profile__input" name="email" value={email || 'pochta@yandex.ru'} required onChange={(e) => setEmail(e.target.value)} placeholder={"Email"}/>
         </label>
         <input type="submit" className="profile__form-submit" value="Редактировать" />
       </form>
