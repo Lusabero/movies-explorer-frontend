@@ -116,9 +116,11 @@
     margin: 28px 0 0 0;
     padding: 60px 0 0;
     flex-direction: column-reverse;
+    align-items: center;
   }
   .about-me__story {
     margin: 40px 0 0 0;
+    max-width: unset;
   }
   .about-me__info-title {
     font-size: 30px;

@@ -68,11 +68,11 @@
 }
 
 /*Временные стили для соответствия макету*/
-.header__sign .header__button_type_account, .header__sign .header__nav {
+.header_sign .header__button_type_account, .header_sign .header__nav {
   display: none;
 }
 
-.header__regular .header__button_type_login, .header__regular .header__button_type_register {
+.header_regular .header__button_type_login, .header_regular .header__button_type_register {
   display: none;
 }
 
@@ -152,20 +152,23 @@
   margin-bottom: 26px;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 768px) {
   .header {
-    padding: 15px 30px;
+    padding: 18px 30px;
   }
 
   .header__button_type_account {
     margin-top: auto;
   }
 
-  .header__button_type_burger {
+  .header_regular .header__button_type_burger {
     display: block;
   }
 
-  .header__nav, .header__buttons {
+  .header__nav {
+    display: none;
+  }
+  .header_regular .header__buttons {
     display: none;
   }
   .header__burger {
@@ -175,12 +178,12 @@
     font-size: 13px;
     line-height: 12px;
   }
-  .header__sign .header__button_type_account {
+  .header_regular .header__button_type_account {
     display: flex;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .header {
     padding: 15px 14px;
   }

@@ -17,7 +17,7 @@ function AboutMe() {
               «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с
               постоянной работы.</p>
             <ul className="about-me__social-list">
-              <li className="about-me__social-item"><a href="https://github.com/" className="about-me__social-link"
+              <li className="about-me__social-item"><a href="https://github.com/Lusabero" className="about-me__social-link"
                                                        target="_blank" rel="noreferrer">Github</a></li>
             </ul>
           </div>

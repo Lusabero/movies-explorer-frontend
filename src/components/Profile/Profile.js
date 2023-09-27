@@ -29,7 +29,7 @@ function Profile() {
         </label>
         <input type="submit" className="profile__form-submit" value="Редактировать" />
       </form>
-      <Link to="/signin" className="profile__exit-link">Выйти из аккаунта</Link>
+      <Link to="/" className="profile__exit-link">Выйти из аккаунта</Link>
     </section>
     </>
   )

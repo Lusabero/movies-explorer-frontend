@@ -22,7 +22,7 @@
   border-radius: 10px;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 767px) {
   .navtab {
     grid-template-columns: repeat(3, 82px);
     column-gap: 6px;

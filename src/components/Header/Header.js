@@ -12,7 +12,7 @@ function Header() {
     setIsBurgerOpen(!isBurgerOpen);
   }
   return (
-    <header className={`header header__${signClass}`}>
+    <header className={`header header_${signClass}`}>
       <Link to='/' className="header__logo-link"><img className="header__logo" src={Logo} alt="Логотип"/></Link>
       <nav className="header__nav">
         <NavLink to="/movies" className={({isActive}) => `header__link ${isActive ? "header__link_active" : ""}`}>Фильмы</NavLink>
@@ -24,10 +24,10 @@ function Header() {
         <Link to='/signin' className="header__button header__button_type_login">Войти</Link>
         <Link to='/profile' className="header__button header__button_type_account">Аккаунт</Link>
       </div>
-      <button className="header__button_type_burger" onClick={handleToggleBurger}></button>
+      <button className="header__button header__button_type_burger" onClick={handleToggleBurger}></button>
       <div className={`header__burger ${isBurgerOpen ? "header__burger_open" : ""}`}>
         <div className="header__burger-container">
-          <button className="header__button_type_burger-close" onClick={handleToggleBurger}></button>
+          <button className="header__button header__button_type_burger-close" onClick={handleToggleBurger}></button>
           <nav className="header__nav-burger">
             <NavLink to="/" className={({isActive}) => `header__link-burger ${isActive ? "header__link-burger_active" : ""}`}>Главная</NavLink>
             <NavLink to="/movies" className={({isActive}) => `header__link-burger ${isActive ? "header__link-burger_active" : ""}`}>Фильмы</NavLink>
