@@ -91,6 +91,17 @@
   margin-left: 10px;
 }
 
+.search-form__error {
+  color: #ff0000;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 56px;
+}
+
 @media (max-width: 768px) {
   .search-form__short-movies {
     margin: 41px auto 0;
