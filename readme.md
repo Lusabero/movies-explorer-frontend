@@ -18,6 +18,7 @@ Frontend часть для сервиса поиска фильмов по кл�
 2. Установить зависимости > npm install
 3. Запустить приложение > npm start
 
+пул реквест [https://github.com/Lusabero/movies-explorer-frontend/pull/2](https://github.com/Lusabero/movies-explorer-frontend/pull/2)
 Домен сервера [https://api.movies.lusabero.nomoredomainsicu.ru/](https://api.movies.lusabero.nomoredomainsicu.ru/)  
 Домен приложения [https://movies.lusabero.nomoredomainsrocks.ru/](https://movies.lusabero.nomoredomainsrocks.ru/)  
 Репозиторий backend части [https://github.com/Lusabero/movies-explorer-api](https://github.com/Lusabero/movies-explorer-api)
