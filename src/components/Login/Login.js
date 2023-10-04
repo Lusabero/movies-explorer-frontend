@@ -13,12 +13,8 @@ function Login(props) {
   const [errorPassword, setErrorPassword] = useState('');
 
   useEffect(() => {
-    if (email !== "" && password !== "") {
-      if (errorPassword !=="" || errorEmail !=="") {
-        setIsSubmitDisabled(true)
-      } else {
-        setIsSubmitDisabled(false)
-      }
+    if (email !== "" && password !== "" && errorPassword ==="" && errorEmail ==="") {
+      setIsSubmitDisabled(false)
     } else {
       setIsSubmitDisabled(true)
     }

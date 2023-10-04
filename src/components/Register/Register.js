@@ -15,12 +15,8 @@ function Register(props) {
   const [errorPassword, setErrorPassword] = useState('');
 
   useEffect(() => {
-    if (name !== "" && email !== "" && password !== "") {
-      if (errorPassword !=="" || errorEmail !=="" || errorName !=="") {
-        setIsSubmitDisabled(true)
-      } else {
-        setIsSubmitDisabled(false)
-      }
+    if (name !== "" && email !== "" && password !== "" && errorPassword ==="" && errorEmail ==="" && errorName ==="") {
+      setIsSubmitDisabled(false)
     } else {
       setIsSubmitDisabled(true)
     }

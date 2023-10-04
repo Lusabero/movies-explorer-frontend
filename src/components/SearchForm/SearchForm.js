@@ -90,7 +90,7 @@ function SearchForm(props) {
           <input type="text" className="search-form__input search-form__input_search" placeholder="Фильм"
                  onChange={handleInputChange} value={searchValue || ''}/>
           <span className="search-form__error">{ error }</span>
-          <button className="search-form__submit" type={"submit"}></button>
+          <button className="search-form__submit" type="submit" onClick={search}></button>
         </div>
         <div className="search-form__short-movies">
           <input type="checkbox"
