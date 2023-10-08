@@ -12,6 +12,7 @@ import Register from "../Register/Register";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import "./App.css";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { SHORT_MOVIES_DURATION } from "../../utils/constants";
 
 function App() {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ function App() {
   function handleDeleteMovie(id) {
     mainApi.removeMovie(id)
       .then(() => {
-        handleGetSavedMovies();
+        setSavedMovies(prev => prev.filter(movie => movie._id !== id))
       })
       .catch((err) => {
         const errMessage = JSON.parse(err.message)
@@ -96,10 +97,10 @@ function App() {
     const shortMovies = localStorage.getItem('shortMovies');
     shortMovies === "true" ?
       setState(movies.filter((movie) => {
-        return movie.nameRU.toLowerCase().includes(searchValue) && movie.duration <= 40;
+        return movie.nameRU.toLowerCase().includes(searchValue) && movie.duration <= SHORT_MOVIES_DURATION;
       })) :
       setState(movies.filter((movie) => {
-        return movie.nameRU.toLowerCase().includes(searchValue) && movie.duration > 40;
+        return movie.nameRU.toLowerCase().includes(searchValue) && movie.duration > SHORT_MOVIES_DURATION;
       }));
     setSearchComplete(true);
   }
@@ -152,6 +153,8 @@ function App() {
           setErrorMessage(errMessage.message);
         }
         setInformationPopup(true);
+      })
+      .finally(() => {
         setIsLoading(false);
       })
   }
@@ -169,6 +172,8 @@ function App() {
           setErrorMessage(errMessage.message);
         }
         setInformationPopup(true);
+      })
+      .finally(() => {
         setIsLoading(false);
       })
   }
@@ -276,6 +281,8 @@ function App() {
               errorMessage={errorMessage}
               setInformationPopup={setInformationPopup}
               setErrorMessage={setErrorMessage}
+              isLoading={isLoading}
+              setIsLoading={setIsLoading}
             />
           }/>
           <Route path="/signin" element={
@@ -285,6 +292,7 @@ function App() {
               errorMessage={errorMessage}
               setInformationPopup={setInformationPopup}
               setErrorMessage={setErrorMessage}
+              setIsLoading={setIsLoading}
             />
           }/>
           <Route path="/signup" element={
@@ -294,6 +302,7 @@ function App() {
               errorMessage={errorMessage}
               setInformationPopup={setInformationPopup}
               setErrorMessage={setErrorMessage}
+              setIsLoading={setIsLoading}
             />
           }/>
           <Route path="*" element={<PageNotFound/>}/>

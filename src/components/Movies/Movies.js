@@ -8,7 +8,6 @@ import "./Movies.css";
 import InformationPopup from "../InformationPopup/InformationPopup";
 
 function Movies(props) {
-
   return (
     <>
       <Header
@@ -22,6 +21,7 @@ function Movies(props) {
           allMovies={props.allMovies}
           isSavedMovies={false}
           setFindMovies={props.setFindMovies}
+          isLoading={props.isLoading}
         />
         <Preloader
           isLoading={props.isLoading}

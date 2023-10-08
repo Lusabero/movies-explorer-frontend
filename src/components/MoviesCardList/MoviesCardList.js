@@ -5,7 +5,8 @@ import {
   MOVIES_TO_FIRST_RENDER_8,
   MOVIES_TO_FIRST_RENDER_5,
   MOVIES_TO_NEXT_RENDER_3,
-  MOVIES_TO_NEXT_RENDER_2
+  MOVIES_TO_NEXT_RENDER_2,
+  SCREEN_SIZES
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
@@ -15,14 +16,15 @@ function MoviesCardList(props) {
 
   useEffect(() => {
     rateLimit();
+    window.addEventListener('resize', resize);
   }, []);
 
   function rateLimit() {
-    if (windowWidth >= 1024) {
+    if (windowWidth >= SCREEN_SIZES.desktopMin) {
       setRenderLimit(MOVIES_TO_FIRST_RENDER_12);
-    } else if (windowWidth >= 650 && windowWidth < 1024) {
+    } else if (windowWidth >= SCREEN_SIZES.tabletMin && windowWidth < SCREEN_SIZES.desktopMin) {
       setRenderLimit(MOVIES_TO_FIRST_RENDER_8);
-    } else if (windowWidth < 650) {
+    } else if (windowWidth < SCREEN_SIZES.tabletMin) {
       setRenderLimit(MOVIES_TO_FIRST_RENDER_5);
     }
   }
@@ -33,12 +35,10 @@ function MoviesCardList(props) {
 
   useEffect(() => {
     setTimeout(rateLimit, 1000);
-  }, [windowWidth])
-
-  window.addEventListener('resize', resize);
+  }, [windowWidth, props.findMovies])
 
   function addRenderLimit() {
-    if (windowWidth >= 1024) {
+    if (windowWidth >= 1280) {
       setRenderLimit(MOVIES_TO_NEXT_RENDER_3 + renderLimit);
     } else {
       setRenderLimit(MOVIES_TO_NEXT_RENDER_2 + renderLimit);

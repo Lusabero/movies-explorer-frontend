@@ -32,6 +32,7 @@ function Login(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    props.setIsLoading(true)
     props.onLogin(email, password);
   }
 

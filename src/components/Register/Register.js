@@ -37,6 +37,7 @@ function Register(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    props.setIsLoading(true)
     props.onRegister(email, password, name);
   }
 

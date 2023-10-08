@@ -16,6 +16,7 @@ function Profile(props) {
   const [errorEmail, setErrorEmail] = useState('');
   function handleSubmit(e) {
     e.preventDefault();
+    props.setIsLoading(true)
     props.handleUpdateUser(name, email);
     setIsUpdateDisabled(true);
   }
@@ -57,16 +58,16 @@ function Profile(props) {
         <form action="" className="profile__form" onSubmit={handleSubmit}>
           <label className="profile__input-label">
             <p className="profile__input-title">Имя</p>
-            <input type="text" className="profile__input" name="name" value={name} required onChange={validation} pattern="[A-Za-zА-Яа-яЁё\s]+" minLength="2" maxLength="30"/>
+            <input type="text" className="profile__input" name="name" value={name} required onChange={validation} pattern="[A-Za-zА-Яа-яЁё\s]+" minLength="2" maxLength="30" disabled={props.isLoading}/>
             <span className="profile__form-error">{errorName}</span>
           </label>
           <div className="profile__input-separator"></div>
           <label className="profile__input-label">
             <p className="profile__input-title">E-mail</p>
-            <input type="email" className="profile__input" name="email" value={email} required onChange={validation}/>
+            <input type="email" className="profile__input" name="email" value={email} required onChange={validation} disabled={props.isLoading}/>
             <span className="profile__form-error">{errorEmail}</span>
           </label>
-          <input type="submit" className="profile__form-submit" value="Редактировать" disabled={isUpdateDisabled}/>
+          <input type="submit" className="profile__form-submit" value="Редактировать" disabled={isUpdateDisabled ||  props.isLoading}/>
         </form>
         <Link to="/" className="profile__exit-link" onClick={props.logOut}>Выйти из аккаунта</Link>
       </section>
